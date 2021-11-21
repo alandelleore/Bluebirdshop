@@ -14,8 +14,7 @@ h2 {
 	color: white;
 }
 .logo {
-    width: 8%;
-    position: fixed;
-    left: 5px;
+    width: 100px;
+    position: absolute;
     top: 6px;
 }

@@ -20,8 +20,8 @@ const ItemCount = ({stock, initial}) => {
       <div className="App">
         <h1 className="stock">Stock : {stock} unid.</h1>
         <p className="counter">{counter}</p>
-        <button  onClick={handleCounterDown}>-</button>
-        <button  onClick={handleCounterUp}>+</button>
+        <button className='botones' onClick={handleCounterDown}>-</button>
+        <button className='botones' onClick={handleCounterUp}>+</button>
       </div>
     );
   };

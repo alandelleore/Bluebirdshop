@@ -14,6 +14,7 @@ render() {
       <Header
 					subtitle='Tienda Online Perfumes '
 				/>
+        
       <ItemListContainer
         greeting='Bienvenido a Bluebird, tienda de Fragancias..'
         info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the  when an unknown printer took a galley of type and scrambled it to make a type specimen It has survived not only five centuries but also the leap into electronic typesettremaining essentially unchanged It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem '
@@ -22,6 +23,7 @@ render() {
         stock='20'
         initial='0'
         />
+        
     </>
   );
 };

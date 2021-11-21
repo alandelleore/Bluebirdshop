@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import logo from './bluebird2.png'
 
-//import cualquierCosa from './logo.png';
+
 
 const Header = (props) => {
     return (
