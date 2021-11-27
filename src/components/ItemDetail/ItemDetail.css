@@ -1,0 +1,79 @@
+.productoDetail {
+  max-width: 1000px;
+  display: flex;
+  flex-flow: row;
+  border-radius: 6px;
+  box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.productoDetail > img {
+  width: 50%;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.infoDetail {
+  width: 40%;
+  margin: 10px 10px 10px 60px;
+  display: flex;
+  flex-flow: column;
+  border: solid rgb(156, 151, 151) 1px;
+  border-radius: 6px;
+  padding: 20px 10px 10px 10px;
+}
+
+.infoDetail * + * {
+  margin-bottom: 0.5em;
+}
+
+.descripcionDetail {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.calificacionDetail > span:first-child {
+  color: rgb(52, 131, 250);
+  font-size: 1.4em;
+}
+
+.precioDetail {
+  font-size: 2.1em;
+  font-weight: 400;
+}
+
+.medioPagoDetail {
+  font-size: 0.9em;
+  color: rgb(52, 131, 250);
+  cursor: pointer;
+}
+
+.precio-envioDetail {
+  color: rgb(0, 166, 80);
+}
+
+.stockDetail {
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+.btn-detail {
+  background-color: #476e9e;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 13px 50px;
+  text-decoration: none;
+}
+.btn-detail:hover {
+  background-color: #284a72;
+}
+.btn-detail:active {
+  position: relative;
+  top: 1px;
+}

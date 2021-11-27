@@ -1,13 +1,24 @@
-import React from 'react';
-import './CardUser.css';
+import React from "react";
+//import ItemDetail from "../ItemDetail/ItemDetail";
+import "./CardUser.css";
 
-const CardUser = ({ data }) => (
-	<div className="CardUser">
-		<img src={data.avatar_url} alt='avatar' width='220px'/>
-		<h4>{data.login}</h4>
-		<span>{data.id}</span>
-		<p><a href={data.url}>{data.url}</a></p>
-	</div>
+const CardUser = (producto) => (
+  <div className="producto">
+    <img src={producto.producto.thumbnail} alt="avatar" />
+    <div className="info">
+      <span className="tipo-envio">Envío con normalidad</span>
+      <span className="precio">$ {producto.producto.price}</span>
+      <span className="precio-envio">Envío gratis</span>
+      <span className="descripcion">{producto.producto.title}</span>
+      <div className="calificacion">
+        <span>★★★★★</span>
+        <span>1919</span>
+      </div>
+      <span className="ubicacion">
+        {producto.producto.seller_address.city.name}
+      </span>
+    </div>
+  </div>
 );
 
 export default CardUser;
