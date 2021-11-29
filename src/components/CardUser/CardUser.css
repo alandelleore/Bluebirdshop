@@ -1,6 +1,11 @@
+.link {
+  text-decoration: none;
+  color: rgb(10, 10, 10);
+}
+
 .producto {
   max-width: 280px;
-  height: auto;
+  height: 504px;
   display: flex;
   flex-flow: column;
   border-radius: 6px;
@@ -63,15 +68,12 @@
 .ubicacion {
   transition-duration: 0.3s;
   transition-property: opacity;
-
   opacity: 0;
-  display: none;
 }
 
 .producto:hover .calificacion,
 .producto:hover .ubicacion {
   opacity: 1;
-  display: block;
 }
 
 .tipo-envio,

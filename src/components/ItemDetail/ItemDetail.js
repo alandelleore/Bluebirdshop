@@ -1,5 +1,6 @@
 import React from "react";
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = (item) => {
   return (
@@ -20,6 +21,7 @@ const ItemDetail = (item) => {
           <button className="btn-detail">Comprar</button>
         </div>
       </div>
+      <ItemCount stock="20" initial="0" />
     </>
   );
 };

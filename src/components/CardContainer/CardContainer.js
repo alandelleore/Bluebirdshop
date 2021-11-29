@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import CardUser from "../CardUser/CardUser";
 import "./CardContainer.css";
 
-const CardContainer = () => {
+const CardContainer = ({ busqueda, limit }) => {
   const [productos, setProductos] = useState([]);
-  const [busqueda] = useState("carolina herrera bad boy");
+  //const [busqueda] = useState("carolina herrera bad boy");
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${busqueda}&limit=4`
+        `https://api.mercadolibre.com/sites/MLA/search?q=${busqueda}&limit=${limit}`
       )
         .then((resp) => resp.json())
         .then((respObj) => {
@@ -21,7 +21,7 @@ const CardContainer = () => {
         })
         .catch((err) => console.log("Error: ", err));
     }, 2000);
-  }, [busqueda]);
+  }, [busqueda, limit]);
   return (
     <>
       {loader ? (

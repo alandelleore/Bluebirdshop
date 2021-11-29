@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./ItemDetailContainer.css";
+import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
-  const [nombreProducto] = useState("hugo boss");
+  const [items, setItems] = useState({});
+  //const [nombreProducto] = useState("hugo boss");
   const [loader, setLoader] = useState(true);
+  const params = useParams();
+  console.log(params.id);
 
   useEffect(() => {
     setTimeout(() => {
       fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${nombreProducto}&limit=1`
+        `https://api.mercadolibre.com/sites/MLA/search?q=${params.id}&limit=1`
       )
         .then((response) => response.json())
         .then((responseObject) => {
@@ -20,7 +23,7 @@ const ItemDetailContainer = () => {
           console.log(responseObject.results);
         });
     }, 2000);
-  }, [nombreProducto]);
+  }, [params.id]);
 
   return (
     <>

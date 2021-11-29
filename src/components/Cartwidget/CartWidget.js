@@ -1,11 +1,17 @@
 import "./CartWidget.css";
-import imagen from "./carrito.png";
+import carritoIcon from "../../assets/carrito.png";
+import searchIcon from "../../assets/search.png";
+import loginIcon from "../../assets/login.png";
 
 const CartWidget = () => {
   return (
-    <div>
-      <img className="carrito" src={imagen} alt="logo" />
-    </div>
+    <>
+      <div className="carrito">
+        <img src={loginIcon} alt="login" />
+        <img src={searchIcon} alt="search" />
+        <img src={carritoIcon} alt="carrito" />
+      </div>
+    </>
   );
 };
 

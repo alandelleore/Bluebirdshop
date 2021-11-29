@@ -1,13 +1,16 @@
 import React from "react";
 import "./Header.css";
-import logo from "./bluebird2.png";
+import logo from "../../assets/logoperfume1.png";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
     <div className="Header">
       <h1>{props.title}</h1>
       <h2>{props.subtitle}</h2>
-      <img className="logo" src={logo} alt="logo" />
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </Link>
     </div>
   );
 };

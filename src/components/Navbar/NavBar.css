@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   background-color: #000;
   height: 45px;
 }
@@ -15,11 +15,14 @@
 .container li {
   display: inline-block;
   padding: 5px 15px;
-  color: #fff;
+  color: rgb(233, 227, 227);
   border: 1px solid #000;
+  transition-duration: 0.4s;
+  transition-property: text-shadow;
 }
+
 .container li:hover {
-  color: rgba(57, 56, 163, 0.849);
+  text-shadow: 0 0 10px #ffffff, 4px 4px 10px rgba(255, 255, 255, 0);
 }
 
 .logo {
