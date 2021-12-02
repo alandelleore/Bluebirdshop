@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className="container">
       <ul>
         <li>
-          <Link to="#">QUIÉNES SOMOS?</Link>
+          <Link to="/About">QUIÉNES SOMOS?</Link>
         </li>
         <li>
           <Link to="/women">MUJER</Link>
@@ -17,10 +17,10 @@ const NavBar = () => {
           <Link to="/Man">HOMBRE</Link>
         </li>
         <li>
-          <Link to="#">IMPORTADOS</Link>
+          <Link to="/Importados">IMPORTADOS</Link>
         </li>
         <li>
-          <Link to="#">OFERTAS</Link>
+          <Link to="/Sale">SALE</Link>
         </li>
         <li>
           <CartWidget />

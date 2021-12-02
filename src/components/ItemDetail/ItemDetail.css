@@ -52,14 +52,9 @@
   color: rgb(0, 166, 80);
 }
 
-.stockDetail {
-  margin-top: 30px;
-  font-weight: 600;
-}
-
-.btn-detail {
-  background-color: #476e9e;
-  border-radius: 5px;
+.btn-comprar {
+  width: 300px;
+  background-color: #000000;
   border: 1px solid #ffffff;
   display: inline-block;
   cursor: pointer;
@@ -70,10 +65,10 @@
   padding: 13px 50px;
   text-decoration: none;
 }
-.btn-detail:hover {
-  background-color: #284a72;
+.btn-comprar:hover {
+  background-color: #19191a;
 }
-.btn-detail:active {
+.btn-comprar:active {
   position: relative;
   top: 1px;
 }

@@ -5,3 +5,12 @@
 body {
   background-color: rgb(238, 235, 235);
 }
+
+.headerConteiner {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}

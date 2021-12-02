@@ -1,31 +1,44 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial }) => {
-  const [counter, setCounter] = useState(parseInt(initial));
+const ItemCount = ({ stock, initial, onAdd, item }) => {
+  const [count, setCount] = useState(parseInt(initial));
 
-  const handleCounterUp = () => {
-    if (counter >= 0 && counter < stock) {
-      setCounter(counter + 1);
+  const handleCountUp = () => {
+    if (count >= 0 && count < stock) {
+      setCount(count + 1);
     }
   };
-  const handleCounterDown = () => {
-    if (counter >= 1) {
-      setCounter(counter - 1);
+  const handleCountDown = () => {
+    if (count >= 1) {
+      setCount(count - 1);
     }
+  };
+
+  const handleOnAdd = () => {
+    onAdd(count, item);
+    setCount(parseInt(initial));
   };
 
   return (
-    <div className="App">
-      <h1 className="stock">Stock : {stock} unid.</h1>
-      <p className="counter">{counter}</p>
-      <button className="botones" onClick={handleCounterDown}>
-        -
-      </button>
-      <button className="botones" onClick={handleCounterUp}>
-        +
-      </button>
-    </div>
+    <>
+      <span className="stockDetail">Stock disponible {stock} unid.</span>
+      <div className="countConteiner App">
+        <button className="botones" onClick={handleCountDown}>
+          -
+        </button>
+        <div className="counter">
+          <p>{count}</p>
+        </div>
+
+        <button className="botones" onClick={handleCountUp}>
+          +
+        </button>
+        <button className="botones btnAdd" onClick={handleOnAdd}>
+          Add
+        </button>
+      </div>
+    </>
   );
 };
 

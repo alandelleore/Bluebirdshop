@@ -16,3 +16,9 @@
   color: black;
   text-align: center;
 }
+
+.text {
+  width: 80%;
+  text-align: justify;
+  margin: auto;
+}

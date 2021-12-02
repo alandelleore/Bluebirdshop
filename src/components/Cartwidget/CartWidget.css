@@ -5,7 +5,7 @@
   top: 45px;
 }
 
-.carrito > img {
+.carrito .menu {
   width: 35px;
   margin: 5px;
   cursor: pointer;
@@ -13,7 +13,7 @@
   transition-property: -webkit-transform, transform;
 }
 
-.carrito > img:hover {
+.carrito .menu:hover {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
