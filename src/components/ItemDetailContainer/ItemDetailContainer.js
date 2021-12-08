@@ -8,7 +8,6 @@ const ItemDetailContainer = () => {
   //const [nombreProducto] = useState("hugo boss");
   const [loader, setLoader] = useState(true);
   const params = useParams();
-  console.log(params.id);
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,7 +19,6 @@ const ItemDetailContainer = () => {
           const arrItems = responseObject.results;
           setItems(arrItems);
           setLoader(false);
-          console.log(responseObject.results);
         });
     }, 2000);
   }, [params.id]);

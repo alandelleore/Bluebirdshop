@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
@@ -6,10 +7,17 @@ import { useState } from "react";
 
 const ItemDetail = ({ item }) => {
   const [changeButton, setChangeButton] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
   const onAdd = (quantity) => {
-    alert(`Agregaste  ${quantity}  ${item.title}`);
-    setChangeButton(true);
+    if (quantity > 0) {
+      addToCart(item, quantity);
+      setChangeButton(true);
+    } else {
+      setChangeButton(false);
+      alert("Indique la cantidad");
+    }
+    //alert(`Agregaste  ${quantity}  ${item.title}`);
   };
 
   return (
