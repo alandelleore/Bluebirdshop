@@ -1,0 +1,103 @@
+.cartDetail {
+  max-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+}
+
+hr {
+  max-width: 60%;
+  margin-left: 50px;
+}
+
+.cartImg {
+  flex-flow: column;
+  padding: 10px;
+}
+
+.cartInfo {
+  width: 30%;
+  margin: 10px 10px 10px 10px;
+
+  flex-flow: column;
+
+  padding: 20px 10px 10px 10px;
+  border-right: solid rgb(156, 151, 151) 1px;
+}
+
+.cartDescription {
+  font-size: 0.8em;
+}
+
+.cartPrice {
+  width: 10%;
+  font-size: 1.6em;
+  font-weight: 400;
+  flex-flow: column;
+  margin: 10px 10px 10px 10px;
+  padding: 20px 10px 10px 10px;
+}
+
+.cartQtn {
+  width: 30px;
+  font-size: 1.2em;
+  font-weight: 400;
+  flex-flow: column;
+  margin: 10px 10px 10px 10px;
+  padding: 20px 10px 10px 10px;
+  border-left: solid rgb(156, 151, 151) 1px;
+  border-right: solid rgb(156, 151, 151) 1px;
+}
+
+.btn-deleteCart {
+  font-family: sans-serif;
+  font-size: 26px;
+  flex-flow: column;
+  color: rgb(80, 78, 78);
+  cursor: pointer;
+}
+
+.cartDelete {
+  color: rgb(80, 78, 78);
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+
+.volver {
+  color: rgb(80, 78, 78);
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.precioTotal {
+  width: 20%;
+  position: absolute;
+  top: 47%;
+  left: 70%;
+  margin: 0;
+  text-align: center;
+
+  border: solid rgb(122, 122, 122) 1px;
+}
+
+.precioTotal > h2 {
+  margin: auto;
+  color: rgb(0, 0, 0) !important;
+}
+
+.precioTotal > p {
+  margin: auto;
+  color: rgb(0, 0, 0) !important;
+}

@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
           setItems(arrItems);
           setLoader(false);
         });
-    }, 2000);
+    }, 1000);
   }, [params.id]);
 
   return (

@@ -72,3 +72,9 @@
   position: relative;
   top: 1px;
 }
+
+.errorCount {
+  margin-left: 20px;
+  color: red;
+  font-size: 18px;
+}

@@ -17,10 +17,10 @@ const CardContainer = ({ busqueda, limit }) => {
           const arrProductos = respObj.results;
           setProductos(arrProductos);
           setLoader(false);
-          console.log(respObj.results);
+          //console.log(respObj.results);
         })
         .catch((err) => console.log("Error: ", err));
-    }, 2000);
+    }, 1000);
   }, [busqueda, limit]);
   return (
     <>

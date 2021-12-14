@@ -17,3 +17,17 @@
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
+
+.cart-count {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 28px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  background-color: red;
+}

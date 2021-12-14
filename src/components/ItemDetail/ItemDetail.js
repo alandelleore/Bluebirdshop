@@ -8,16 +8,17 @@ import { useState } from "react";
 const ItemDetail = ({ item }) => {
   const [changeButton, setChangeButton] = useState(false);
   const { addToCart } = useContext(CartContext);
+  const [mensajeError, setMensajeError] = useState(false);
 
   const onAdd = (quantity) => {
     if (quantity > 0) {
       addToCart(item, quantity);
       setChangeButton(true);
+      setMensajeError(false);
     } else {
       setChangeButton(false);
-      alert("Indique la cantidad");
+      setMensajeError(true);
     }
-    //alert(`Agregaste  ${quantity}  ${item.title}`);
   };
 
   return (
@@ -39,6 +40,7 @@ const ItemDetail = ({ item }) => {
               <ItemCount stock="20" initial="0" onAdd={onAdd} producto={item} />
             </>
           )}
+          {mensajeError && <p className="errorCount">Indique la cantidad</p>}
           {changeButton && (
             <>
               <Link to="/cart">
