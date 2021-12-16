@@ -15,7 +15,7 @@ import CategoryMan from "./views/CategoryMan";
 import CategoryWomen from "./views/CetegoryWomen";
 import About from "./views/About";
 import Cart from "./views/Cart";
-import Importados from "./views/Importados";
+import Sets from "./views/Sets";
 import Sale from "./views/Sale";
 import CartContext from "./Context/CartContext";
 
@@ -34,7 +34,7 @@ class App extends Component {
               <Route path="/About" element={<About />}></Route>
               <Route path="/man" element={<CategoryMan />}></Route>
               <Route path="/women" element={<CategoryWomen />}></Route>
-              <Route path="/importados" element={<Importados />}></Route>
+              <Route path="/sets" element={<Sets />}></Route>
               <Route path="/Sale" element={<Sale />}></Route>
               <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
               <Route path="/cart" element={<Cart />}></Route>

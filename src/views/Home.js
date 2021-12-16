@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Banner />
       <h2 className="titulo">Fragancias</h2>
-      <CardContainer busqueda="carolina herrera" limit={8} />
+      <CardContainer />
     </>
   );
 };

@@ -5,16 +5,13 @@ import "../components/CardContainer/CardContainer.css";
 import { db } from "../firebase/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-const CategoryMan = () => {
+const Sets = () => {
   const [productsData, setProductsData] = useState([]);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(
-        collection(db, "productos"),
-        where("genero", "==", "hombre")
-      );
+      const q = query(collection(db, "productos"), where("set", "==", true));
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
@@ -41,4 +38,4 @@ const CategoryMan = () => {
   );
 };
 
-export default CategoryMan;
+export default Sets;

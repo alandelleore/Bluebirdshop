@@ -2,13 +2,34 @@ import React, { useEffect, useState } from "react";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState({});
-  //const [nombreProducto] = useState("hugo boss");
-  const [loader, setLoader] = useState(true);
+  const [items, setItems] = useState([]);
   const params = useParams();
+  const [loader, setLoader] = useState(true);
+  console.log(params);
 
+  const ItemFilterId = items.filter((product) => {
+    return product.id === params.id;
+  });
+
+  useEffect(() => {
+    const getItems = async () => {
+      const q = query(collection(db, "productos"));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(docs);
+      setLoader(false);
+    };
+    getItems();
+  }, []);
+
+  /** 
   useEffect(() => {
     setTimeout(() => {
       fetch(
@@ -22,7 +43,7 @@ const ItemDetailContainer = () => {
         });
     }, 1000);
   }, [params.id]);
-
+*/
   return (
     <>
       <h2 className="titulo">Detalle del producto</h2>
@@ -30,7 +51,7 @@ const ItemDetailContainer = () => {
         <p className="loader">Cargando...</p>
       ) : (
         <div className="Card2Container">
-          {items.map((item, indice) => {
+          {ItemFilterId.map((item, indice) => {
             return <ItemDetail item={item} key={indice} />;
           })}
         </div>

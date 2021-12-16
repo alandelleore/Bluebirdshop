@@ -1,12 +1,42 @@
-import React from "react";
-//import { useParams } from "react-router";
-import CardContainer from "../components/CardContainer/CardContainer";
+import React, { useEffect, useState } from "react";
+import CardUser from "../components/CardUser/CardUser";
+import "../components/CardContainer/CardContainer.css";
+
+import { db } from "../firebase/firebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const CategoryWomen = () => {
-  //const params = useParams();
+  const [productsData, setProductsData] = useState([]);
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const q = query(
+        collection(db, "productos"),
+        where("genero", "==", "mujer")
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setProductsData(docs);
+      setLoader(false);
+    };
+    getProducts();
+  }, []);
+
   return (
     <>
-      <CardContainer busqueda="perfume mujer" limit={12} />
+      {loader ? (
+        <p className="loader">Cargando...</p>
+      ) : (
+        <div className="CardContainer">
+          {productsData.map((producto, indice) => {
+            return <CardUser producto={producto} key={indice} />;
+          })}
+        </div>
+      )}
     </>
   );
 };

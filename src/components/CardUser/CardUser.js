@@ -5,10 +5,10 @@ import "./CardUser.css";
 
 const CardUser = ({ producto }) => (
   <>
-    <Link to={`/item/${producto.title}`} className="link">
+    <Link to={`/item/${producto.id}`} className="link">
       <div className="producto">
         <img
-          src={producto.thumbnail}
+          src={producto.img}
           alt="avatar"
           style={{ width: "280px", height: "280px" }}
         />
@@ -21,7 +21,7 @@ const CardUser = ({ producto }) => (
             <span>★★★★★</span>
             <span>1919</span>
           </div>
-          <span className="ubicacion">{producto.seller_address.city.name}</span>
+          <span className="ubicacion">{producto.genero}</span>
         </div>
       </div>
     </Link>

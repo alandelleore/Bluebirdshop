@@ -10,7 +10,8 @@ hr {
   margin-left: 50px;
 }
 
-.cartImg {
+.cartImg > img {
+  width: 100px;
   flex-flow: column;
   padding: 10px;
 }

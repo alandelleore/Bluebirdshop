@@ -24,7 +24,7 @@ const ItemDetail = ({ item }) => {
   return (
     <>
       <div className="productoDetail">
-        <img src={item.thumbnail} alt="avatar" />
+        <img src={item.img} alt="avatar" />
         <div className="infoDetail">
           <span className="descripcionDetail">{item.title}</span>
           <div className="calificacionDetail">
@@ -37,7 +37,12 @@ const ItemDetail = ({ item }) => {
 
           {!changeButton && (
             <>
-              <ItemCount stock="20" initial="0" onAdd={onAdd} producto={item} />
+              <ItemCount
+                stock={item.stock}
+                initial="0"
+                onAdd={onAdd}
+                producto={item}
+              />
             </>
           )}
           {mensajeError && <p className="errorCount">Indique la cantidad</p>}

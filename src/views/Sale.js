@@ -1,12 +1,41 @@
-import React from "react";
-import CardContainer from "../components/CardContainer/CardContainer";
+import React, { useEffect, useState } from "react";
+import CardUser from "../components/CardUser/CardUser";
+import "../components/CardContainer/CardContainer.css";
 
-function Sale() {
+import { db } from "../firebase/firebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
+const Sale = () => {
+  const [productsData, setProductsData] = useState([]);
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const q = query(collection(db, "productos"), where("sale", "==", true));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setProductsData(docs);
+      setLoader(false);
+    };
+    getProducts();
+  }, []);
+
   return (
     <>
-      <CardContainer busqueda="perfumes oferta" limit={12} />
+      {loader ? (
+        <p className="loader">Cargando...</p>
+      ) : (
+        <div className="CardContainer">
+          {productsData.map((producto, indice) => {
+            return <CardUser producto={producto} key={indice} />;
+          })}
+        </div>
+      )}
     </>
   );
-}
+};
 
 export default Sale;
