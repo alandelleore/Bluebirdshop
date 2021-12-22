@@ -49,7 +49,7 @@ const ItemDetail = ({ item }) => {
           {changeButton && (
             <>
               <Link to="/cart">
-                <button className="btn-comprar">Finalizar compra</button>
+                <button className="btn-comprar">Ir al Carrito</button>
               </Link>
               <Link to="/">
                 <button className="btn-comprar">Seguir comprando</button>

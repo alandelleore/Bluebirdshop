@@ -11,10 +11,10 @@ const NavBar = () => {
           <Link to="/About">QUIÉNES SOMOS?</Link>
         </li>
         <li>
-          <Link to="/women">MUJER</Link>
+          <Link to="/category/mujer">MUJER</Link>
         </li>
         <li>
-          <Link to="/Man">HOMBRE</Link>
+          <Link to="/category/hombre">HOMBRE</Link>
         </li>
         <li>
           <Link to="/Sets">SETS</Link>

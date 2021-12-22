@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./ItemDetailContainer.css";
-import { useParams } from "react-router";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router";
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
+import {
+  collection,
+  query,
+  getDocs,
+  where,
+  documentId,
+} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [items, setItems] = useState([]);
-  const params = useParams();
   const [loader, setLoader] = useState(true);
-  console.log(params);
-
-  const ItemFilterId = items.filter((product) => {
-    return product.id === params.id;
-  });
+  const { id } = useParams();
 
   useEffect(() => {
     const getItems = async () => {
-      const q = query(collection(db, "productos"));
+      const q = query(
+        collection(db, "productos"),
+        where(documentId(), "==", id)
+      );
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
@@ -27,23 +31,8 @@ const ItemDetailContainer = () => {
       setLoader(false);
     };
     getItems();
-  }, []);
+  }, [id]);
 
-  /** 
-  useEffect(() => {
-    setTimeout(() => {
-      fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?q=${params.id}&limit=1`
-      )
-        .then((response) => response.json())
-        .then((responseObject) => {
-          const arrItems = responseObject.results;
-          setItems(arrItems);
-          setLoader(false);
-        });
-    }, 1000);
-  }, [params.id]);
-*/
   return (
     <>
       <h2 className="titulo">Detalle del producto</h2>
@@ -51,7 +40,7 @@ const ItemDetailContainer = () => {
         <p className="loader">Cargando...</p>
       ) : (
         <div className="Card2Container">
-          {ItemFilterId.map((item, indice) => {
+          {items.map((item, indice) => {
             return <ItemDetail item={item} key={indice} />;
           })}
         </div>

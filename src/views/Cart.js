@@ -4,11 +4,9 @@ import "./views.css";
 import { Link } from "react-router-dom";
 
 const Cart = ({ item }) => {
-  const { cartList, deleteItem, deleteCartList } = useContext(CartContext);
-  const precioTotal = Object.values(cartList).reduce(
-    (acc, { quantity, price }) => acc + quantity * price,
-    0
-  );
+  const { cartList, deleteItem, deleteCartList, precioTotal } =
+    useContext(CartContext);
+
   console.log(cartList);
   console.log(precioTotal);
 
@@ -46,12 +44,13 @@ const Cart = ({ item }) => {
             ⌫ Vaciar Carrito
           </span>
           <div className="precioTotal">
-            <div>
-              <p>Total:</p>
-            </div>
-            <div>
-              <h2>${precioTotal}</h2>
-            </div>
+            <p className="line-precioTotal">
+              <span className="totalText">Total: </span>${precioTotal}
+            </p>
+
+            <Link to="/shooping">
+              <button className="btn-comprar btn-comprar2">COMPRAR</button>
+            </Link>
           </div>
         </>
       ) : (

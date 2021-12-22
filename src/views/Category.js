@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import CardUser from "../components/CardUser/CardUser";
 import "../components/CardContainer/CardContainer.css";
-
+import { useParams } from "react-router";
 import { db } from "../firebase/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-const CategoryMan = () => {
+const Category = () => {
   const [productsData, setProductsData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const { genero } = useParams();
 
   useEffect(() => {
     const getProducts = async () => {
       const q = query(
         collection(db, "productos"),
-        where("genero", "==", "hombre")
+        where("genero", "==", genero)
       );
       const docs = [];
       const querySnapshot = await getDocs(q);
@@ -24,7 +25,7 @@ const CategoryMan = () => {
       setLoader(false);
     };
     getProducts();
-  }, []);
+  }, [genero]);
 
   return (
     <>
@@ -41,4 +42,4 @@ const CategoryMan = () => {
   );
 };
 
-export default CategoryMan;
+export default Category;

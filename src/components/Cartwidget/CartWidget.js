@@ -18,8 +18,18 @@ const CartWidget = () => {
   return (
     <>
       <div className="carrito">
-        <img src={loginIcon} alt="login" className="menu" />
-        <img src={searchIcon} alt="search" className="menu" />
+        <img
+          src={loginIcon}
+          alt="login"
+          title="En desarrollo"
+          className="menu"
+        />
+        <img
+          src={searchIcon}
+          alt="search"
+          title="En desarrollo"
+          className="menu"
+        />
         <Link to="/cart">
           <img src={carritoIcon} alt="carrito" className="menu" />
         </Link>

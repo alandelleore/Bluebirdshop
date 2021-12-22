@@ -1,0 +1,15 @@
+.on {
+  display: block;
+}
+
+.off {
+  display: none;
+}
+
+.load-form {
+  display: block;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  bottom: 50px;
+}

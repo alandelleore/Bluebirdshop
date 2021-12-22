@@ -34,6 +34,11 @@ const CartContextProvider = (props) => {
     //setQuantItems(0);
   }
 
+  const precioTotal = Object.values(cartList).reduce(
+    (acc, { quantity, price }) => acc + quantity * price,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -42,6 +47,7 @@ const CartContextProvider = (props) => {
         deleteCartList,
         cartList,
         quantItems,
+        precioTotal,
       }}
     >
       {props.children}
