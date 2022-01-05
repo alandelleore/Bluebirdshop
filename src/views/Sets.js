@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import CardUser from "../components/CardUser/CardUser";
 import "../components/CardContainer/CardContainer.css";
-
+import { CartContext } from "../Context/CartContext";
 import { db } from "../firebase/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 const Sets = () => {
   const [productsData, setProductsData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const { busqueda, setMagnifyingGlassEnabled } = useContext(CartContext);
+  setMagnifyingGlassEnabled(true);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -29,9 +31,13 @@ const Sets = () => {
         <p className="loader">Cargando...</p>
       ) : (
         <div className="CardContainer">
-          {productsData.map((producto, indice) => {
-            return <CardUser producto={producto} key={indice} />;
-          })}
+          {productsData
+            .filter((p) =>
+              p.title.toLowerCase().includes(busqueda.toLocaleLowerCase())
+            )
+            .map((producto, indice) => {
+              return <CardUser producto={producto} key={indice} />;
+            })}
         </div>
       )}
     </>

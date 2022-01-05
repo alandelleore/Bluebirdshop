@@ -7,8 +7,11 @@ import { useState } from "react";
 
 const ItemDetail = ({ item }) => {
   const [changeButton, setChangeButton] = useState(false);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, setMagnifyingGlassEnabled, setBusqueda } =
+    useContext(CartContext);
   const [mensajeError, setMensajeError] = useState(false);
+  setMagnifyingGlassEnabled(false);
+  setBusqueda("");
 
   const onAdd = (quantity) => {
     if (quantity > 0) {
@@ -29,7 +32,8 @@ const ItemDetail = ({ item }) => {
           <span className="descripcionDetail">{item.title}</span>
           <div className="calificacionDetail">
             <span>★★★★★</span>
-            <span>1919</span>
+
+            <p className="description">{item.description}</p>
           </div>
           <span className="precioDetail">$ {item.price}</span>
           <span className="medioPagoDetail">Ver medios de pago</span>

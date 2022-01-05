@@ -19,11 +19,8 @@ hr {
 .cartInfo {
   width: 30%;
   margin: 10px 10px 10px 10px;
-
   flex-flow: column;
-
   padding: 20px 10px 10px 10px;
-  border-right: solid rgb(156, 151, 151) 1px;
 }
 
 .cartDescription {
@@ -32,10 +29,10 @@ hr {
 
 .cartPrice {
   width: 10%;
-  font-size: 1.6em;
+  font-size: 1.2em;
   font-weight: 400;
   flex-flow: column;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 15px;
   padding: 20px 10px 10px 10px;
 }
 
@@ -44,10 +41,8 @@ hr {
   font-size: 1.2em;
   font-weight: 400;
   flex-flow: column;
-  margin: 10px 10px 10px 10px;
-  padding: 20px 10px 10px 10px;
-  border-left: solid rgb(156, 151, 151) 1px;
-  border-right: solid rgb(156, 151, 151) 1px;
+  margin: 10px 0 10px 10px;
+  padding: 20px 0 10px 10px;
 }
 
 .btn-deleteCart {
@@ -83,20 +78,20 @@ a {
 }
 
 .precioTotal {
-  width: 22%;
   position: absolute;
   top: 43%;
   left: 70%;
   margin: 0;
   text-align: center;
-
-  padding: 20px;
 }
 .line-precioTotal {
+  padding-bottom: 10px;
   border-bottom: solid rgb(122, 122, 122) 1px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .totalText {
-  margin-right: 100px;
+  margin-right: 140px;
 }
 .container-total {
   display: inline-block;
@@ -116,26 +111,6 @@ a {
   margin-top: 40px;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 360px;
-  justify-content: space-around;
-  align-items: center;
-  padding: 60px;
-  height: 260px;
-  border: solid black 1px;
-}
-
-.form-container > input {
-  width: 340px;
-  font-size: 20px;
-  height: 25px;
-}
-
 .error {
   display: block;
   width: 360px;
@@ -144,11 +119,74 @@ a {
   margin-top: 50px;
 }
 
-.detalle {
-  display: block;
-  width: 600px;
-  border: solid black 1px;
-  height: auto;
+.detalle-cart {
+  max-width: 90%;
   margin: auto;
-  margin-top: 50px;
+  display: flex;
+  flex-flow: row;
+  line-height: 3;
+}
+
+.detalle-producto {
+  width: 20%;
+  flex-flow: column;
+
+  padding: 20px 10px 0 10px;
+}
+
+.detalle-descripcion {
+  width: 23%;
+  flex-flow: column;
+  padding: 20px 10px 0 10px;
+}
+
+.detalle-precio {
+  width: 100px;
+  flex-flow: column;
+  padding: 20px 10px 0 10px;
+}
+
+.detalle-cantidad {
+  width: 24%;
+  padding: 20px 10px 0 10px;
+}
+
+.cant {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .cartDetail {
+    width: 70%;
+    margin-left: 20px;
+  }
+  .detalle-cart {
+    width: 70%;
+    margin-left: 60px;
+  }
+  .precioTotal {
+    left: 65%;
+  }
+  .btn-comprar2 {
+    width: 270px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 778px) {
+  .totalText {
+    margin-right: 50px;
+  }
+  .btn-comprar2 {
+    width: 180px;
+    font-size: 16px;
+  }
+  .precioTotal {
+    left: 70%;
+  }
 }

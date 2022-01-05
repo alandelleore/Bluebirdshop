@@ -1,25 +1,42 @@
 import React, { useContext } from "react";
+
 import { CartContext } from "../Context/CartContext";
 import "./views.css";
 import { Link } from "react-router-dom";
 
-const Cart = ({ item }) => {
-  const { cartList, deleteItem, deleteCartList, precioTotal } =
-    useContext(CartContext);
-
-  console.log(cartList);
-  console.log(precioTotal);
-
+const Cart = () => {
+  const {
+    cartList,
+    deleteItem,
+    deleteCartList,
+    precioTotal,
+    setMagnifyingGlassEnabled,
+  } = useContext(CartContext);
+  setMagnifyingGlassEnabled(false);
   return (
     <>
       {cartList.length ? (
         <>
-          <h2 className="titulo">Detalle Carrito</h2>
+          <div className="detalle-cart">
+            <div className="detalle-producto">
+              <span>Producto</span>
+            </div>
+            <div className="detalle-descripcion">
+              <span>Descripción</span>
+            </div>
+            <div className="detalle-precio">
+              <span>Precio</span>
+            </div>
+            <div className="detalle-cantidad">
+              <span>Cantidad</span>
+            </div>
+          </div>
 
           {cartList.map((item, index) => (
             <div key={index}>
+              <hr></hr>
               <div className="cartDetail">
-                <div className="btn-deleteCart" title="Eliminar artículo">
+                <div className="btn-deleteCart" title="Eliminar producto">
                   <span onClick={() => deleteItem(item.id, item.quantity)}>
                     X
                   </span>
@@ -45,11 +62,13 @@ const Cart = ({ item }) => {
           </span>
           <div className="precioTotal">
             <p className="line-precioTotal">
-              <span className="totalText">Total: </span>${precioTotal}
+              <span className="totalText">TOTAL: </span>${precioTotal}
             </p>
 
             <Link to="/shooping">
-              <button className="btn-comprar btn-comprar2">COMPRAR</button>
+              <button className="btn-comprar btn-comprar2">
+                Finalizar compra
+              </button>
             </Link>
           </div>
         </>

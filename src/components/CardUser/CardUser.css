@@ -4,7 +4,7 @@
 }
 
 .producto {
-  max-width: 280px;
+  width: 280px;
   height: 504px;
   display: flex;
   flex-flow: column;
@@ -84,4 +84,14 @@
 .calificacion > span:first-child {
   color: rgb(52, 131, 250);
   font-size: 1.4em;
+}
+
+@media (max-width: 614px) {
+  .producto > img {
+    margin: auto;
+  }
+
+  .info {
+    margin: auto;
+  }
 }

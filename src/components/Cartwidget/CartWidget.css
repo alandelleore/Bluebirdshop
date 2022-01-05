@@ -31,3 +31,19 @@
   font-size: 12px;
   background-color: red;
 }
+
+.searchEnabled {
+  display: block;
+}
+
+.searchDisabled {
+  display: none;
+}
+
+.lupa-on {
+  visibility: visible;
+}
+
+.lupa-off {
+  visibility: hidden;
+}

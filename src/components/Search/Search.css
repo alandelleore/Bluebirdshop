@@ -1,0 +1,30 @@
+.buscador {
+  width: 330px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  color: rgb(226, 217, 217);
+  position: fixed;
+  top: 145px;
+  right: 100px;
+  background-color: black;
+
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .buscador {
+    right: -20px;
+  }
+}
+@media (max-width: 900px) {
+  .buscador {
+    width: 35%;
+    top: 52px;
+    right: 125px;
+    border-radius: 20px;
+    outline: auto;
+    background-color: white;
+    color: rgb(37, 36, 36);
+  }
+}

@@ -1,0 +1,38 @@
+.detalle {
+  display: block;
+  width: 600px;
+  border: solid black 1px;
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.operacion {
+  margin: auto;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.44);
+}
+
+.detalle-total {
+  font-size: 1.4em;
+  text-align: justify;
+  margin-left: 40px;
+}
+
+.detalle-final {
+  margin-left: 40px;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 20px;
+  display: block;
+  position: fixed;
+}
+
+link {
+  text-decoration: none;
+  color: black;
+}

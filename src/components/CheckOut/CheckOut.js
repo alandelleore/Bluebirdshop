@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+
 import "../../views/views.css";
-import "../Form/Form.css";
+import "./CheckOut.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import MessageSuccess from "../MessageSuccess/MessageSuccess";
@@ -13,12 +14,11 @@ const initialState = {
   adress: "",
 };
 
-const Form = () => {
+const CheckOut = () => {
   const [values, setValues] = useState(initialState);
   const [loader, setLoader] = useState(false);
   const [purchaseID, setPurchaseId] = useState("");
   const [isEnabled, setIsEnable] = useState(false);
-  //const { deleteCartList } = useContext(CartContext);
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -44,16 +44,17 @@ const Form = () => {
   return (
     <div>
       <div className={isEnabled ? "off" : "on"}>
+        <h2 className="titulo">Finalizar Compra</h2>
         <form className="form-container " onSubmit={onSubmitHandler}>
           <input
-            placeholder="Name"
+            placeholder="Nombre"
             name="name"
             type="text"
             value={values.name}
             onChange={onChangeHandler}
           ></input>
           <input
-            placeholder="LastName"
+            placeholder="Apellido"
             name="lastName"
             type="text"
             value={values.lastName}
@@ -68,7 +69,7 @@ const Form = () => {
             onChange={onChangeHandler}
           ></input>
           <input
-            placeholder="Adress"
+            placeholder="Dirección"
             name="adress"
             value={values.adress}
             onChange={onChangeHandler}
@@ -91,4 +92,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CheckOut;

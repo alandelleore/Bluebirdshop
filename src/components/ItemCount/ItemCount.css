@@ -39,3 +39,15 @@
   margin-top: 30px;
   font-weight: 600;
 }
+
+@media (max-width: 957px) {
+  .countConteiner {
+    width: 240px;
+  }
+}
+
+@media (max-width: 715px) {
+  .countConteiner {
+    width: 200px;
+  }
+}

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router";
 import { db } from "../../firebase/firebaseConfig";
+import { CartContext } from "../../Context/CartContext";
 import {
   collection,
   query,
@@ -15,6 +16,8 @@ const ItemDetailContainer = () => {
   const [items, setItems] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams();
+  const { setSearchEnabled } = useContext(CartContext);
+  setSearchEnabled(false);
 
   useEffect(() => {
     const getItems = async () => {

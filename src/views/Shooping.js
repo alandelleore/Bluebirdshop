@@ -1,11 +1,26 @@
-import React from "react";
-import Form from "../components/Form/Form";
+import React, { useState, useContext } from "react";
+import CheckOut from "../components/CheckOut/CheckOut";
+import { CartContext } from "../Context/CartContext";
 
 function Shooping() {
+  const [loader, setLoader] = useState(true);
+  const { setMagnifyingGlassEnabled } = useContext(CartContext);
+  setMagnifyingGlassEnabled(false);
+
+  setTimeout(() => {
+    setLoader(false);
+  }, 1000);
+
   return (
-    <div>
-      <Form />
-    </div>
+    <>
+      {loader ? (
+        <p className="loader">Cargando...</p>
+      ) : (
+        <div>
+          <CheckOut />
+        </div>
+      )}
+    </>
   );
 }
 
