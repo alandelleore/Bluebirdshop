@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Proyecto Final React JS - CODERHOUSE
+# Bluebird
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bluebird es el nombre del mi proyecto, inspirado en el la canción de Wings. Es un E-commerce de venta de perfumes importados que cuenta con 31 productos.
 
-## Available Scripts
+## Herramientas utilizadas
 
-In the project directory, you can run:
++ React-router-dom
++ Firebase
+No utilice ninguna dependencia para la parte visual y de diseño.
 
 ### `npm start`
 
