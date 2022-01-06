@@ -9,7 +9,7 @@ Cuenta con 24 productos los cuales se muestran en su totalidad en el Home, se pu
 
 + React-router-dom
 + Firebase
-+ No utilice ninguna dependencia para la parte visual y de diseño.
++ No utilicé ninguna dependencia para la parte visual y de diseño.
 
 ## VISTAS
 
