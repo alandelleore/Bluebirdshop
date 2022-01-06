@@ -23,6 +23,8 @@ Cuenta con 24 productos los cuales se muestran en su totalidad en el Home, se pu
 
 ![image](https://user-images.githubusercontent.com/84545725/148314286-85e88283-82c5-49ed-9ce3-7e8315e5c59d.png)
 
+![BLUEBIRDWEB](https://user-images.githubusercontent.com/84545725/148320802-4aac3171-60ee-46f2-a73c-685d44a46410.gif)
+
 
 
 
