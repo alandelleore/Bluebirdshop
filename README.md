@@ -3,7 +3,7 @@
 
 Bluebird es el nombre del mi proyecto, inspirado en el la canción de Wings. Es un E-commerce de venta de perfumes importados.
 
-Cuenta con 31 productos los cuales se muestran en su totalidad en el Home, se pueden filtrar a partir de las categorías representadas en el NavBar, así como también posee un buscador que filtra por nombre del producto. Cuenta con dos vistas de detalle del carrito, una de las cuales se accede desde el icono y la otra se llega siguiendo el proceso de compra en cuestión.
+Cuenta con 24 productos los cuales se muestran en su totalidad en el Home, se pueden filtrar a partir de las categorías representadas en el NavBar, así como también posee un buscador que filtra por nombre del producto. Cuenta con dos vistas de detalle del carrito, una de las cuales se accede desde el icono y la otra se llega siguiendo el proceso de compra en cuestión.
 
 ## Herramientas utilizadas
 
