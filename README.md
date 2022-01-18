@@ -1,5 +1,4 @@
 # Proyecto Final React JS - CODERHOUSE
-Proyecto Final React JS - CODERHOUSE
 # Bluebird
 
 Bluebird es el nombre de mi proyecto, inspirado en el la canción de Wings. Es un E-commerce de venta de perfumes importados.
