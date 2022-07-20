@@ -1,7 +1,7 @@
 # Proyecto Final React JS - CODERHOUSE
 # Bluebird
 
-https://bluebirdshop.netlify.app/
+https://bluebirdshop2.netlify.app/
 
 Bluebird es el nombre de mi proyecto, inspirado en el la canción de Wings. Es un E-commerce de venta de perfumes importados.
 
